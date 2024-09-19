@@ -1,0 +1,29 @@
+// Write your code here
+import java.util.Scanner;
+
+import javax.xml.validation.Schema;
+public class Eggs {
+
+    public static void main(String[] args) {
+        final double singleCost = 0.45;
+        final double dozenCost = 3.25;
+        final int dozen = 12;
+        Scanner inputDevice = new Scanner(System.in);
+        System.out.print("Enter number of eggs ordered >> ");
+        int eggsOrdered = inputDevice.nextInt();
+        int countEggs = eggsOrdered / dozen;
+        int remainderEggs = eggsOrdered % dozen;
+        double dozenTotal = countEggs * dozenCost;
+        double singleTotal = remainderEggs * singleCost;
+        double totalCost = dozenTotal + singleTotal;
+      
+        //System.out.println("eggsOrdered " + eggsOrdered + " countEggs " + countEggs + " remainderEggs " + remainderEggs);
+        //System.out.println("dozenTotal " + dozenTotal + " singleTotal " + singleTotal + " totalCost " + totalCost);
+        System.out.println("You ordered " + eggsOrdered + " eggs. That's " + countEggs + " dozen at $" + dozenCost + " per dozen and " + remainderEggs + " loose eggs at " + singleCost + " cents each for a total of $" + totalCost);
+
+    }
+}
+
+Output:
+Enter number of eggs ordered >> 27
+You ordered 27 eggs. That's 2 dozen at $3.25 per dozen and 3 loose eggs at 0.45 cents each for a total of $7.85
