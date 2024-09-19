@@ -19,11 +19,36 @@ public class MileConversions {
         System.out.println(miles + " miles = " + inchesToMiles + " inches, or " + feetToMiles + " feet, or " + yardsToMiles + " yards");
     }   
 }
+Output:
+10.0 miles = 633600.0 inches, or 52800.0 feet, or 17600.0 yards
 
 Part B
 Convert the MileConversions program to an interactive application by copying the code into the MileConversionsInteractive.java file. Instead of assigning a value to the miles variable, accept it from the user as input.
-
 An example of the program is shown below:
 
 Enter miles >> 4.5
 4.5 miles is 285120.0 inches, or 23760.0 feet, or 7920.0 yards
+
+// Write your code here
+import java.util.Scanner;
+
+public class MileConversionsInteractive {
+    public static void main(String[] args) {
+        final double INCHES_IN_MILE = 63360;
+        final double FEET_IN_MILE = 5280;
+        final double YARDS_IN_MILE = 1760;
+
+        Scanner inputDevice = new Scanner(System.in);
+        System.out.print("Enter miles >> ");
+
+        double miles = inputDevice.nextDouble();
+        double inchesToMiles = miles * INCHES_IN_MILE;
+        double feetToMiles = miles * FEET_IN_MILE;
+        double yardsToMiles = miles * YARDS_IN_MILE;
+        System.out.println(miles + " miles = " + inchesToMiles + " inches, or " + feetToMiles + " feet, or " + yardsToMiles + " yards");
+    }    
+}
+
+Output:
+Enter miles >> 10
+10.0 miles = 633600.0 inches, or 52800.0 feet, or 17600.0 yards
