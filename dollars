@@ -5,3 +5,33 @@ An example of the program is shown below:
 
 Enter a number of dollars 3025
 $3025 converted is 151 $20s, 0 $10s, 1 $5s, and 0 $1s
+
+// Write your code here
+import java.util.Scanner;
+
+public class Dollars {
+    public static void main(String[] args) {
+        final int twenty = 20;
+        final int ten = 10;
+        final int five = 5;
+        final int one = 1;
+
+        Scanner inputDevice = new Scanner(System.in);
+        System.out.print("Enter a number if dollars ");
+
+        int totalAmount = inputDevice.nextInt();
+        int dividedTwenty = totalAmount / twenty;
+        int remainderTwenty = totalAmount % twenty;
+        
+        int dividedTen = remainderTwenty / ten;
+        int dividedFive = remainderTwenty / ten;
+        int dividedOne = remainderTwenty % five;
+
+    //    System.out.println(dividedTwenty + " " + remainderTwenty + " " + dividedTen + " " + dividedFive + " " + dividedOne);
+        System.out.println("$" + totalAmount + " converted is " + dividedTwenty + " $20s, " + dividedTen + " $10s, " + dividedFive + " $5s, and " + dividedOne + " $1s");
+
+    }
+}
+Output:
+Enter a number if dollars 137
+$137 converted is 6 $20s, 1 $10s, 1 $5s, and 2 $1s
