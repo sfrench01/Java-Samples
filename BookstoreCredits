@@ -1,0 +1,27 @@
+// Write your code here
+import java.util.Scanner;
+public class BookstoreCredit{
+    public static void main(String[] args){
+        String name;
+        double gpa;
+        final double credit = 10;
+        Scanner inputDevice = new Scanner(System.in);
+
+        System.out.print("Enter your name >> ");
+        name = inputDevice.nextLine();
+        System.out.print("Enter your gpa >> ");
+        gpa = inputDevice.nextDouble();
+
+        computeDiscount(name, gpa);        
+
+        System.out.print(name);
+        System.out.print(", your GPA is ");
+        System.out.print(gpa);
+        System.out.print(", so your credit is $");
+        
+    }
+    public static void computeDiscount(String name, double gpa){
+        double earnedCredits = gpa * 10;
+        System.out.println(name + ", your GPA  is " + gpa + ", so your credit is $" + earnedCredits);
+    }
+}
