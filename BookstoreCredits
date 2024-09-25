@@ -1,3 +1,4 @@
+//this includes the use of methods
 // Write your code here
 import java.util.Scanner;
 public class BookstoreCredit{
