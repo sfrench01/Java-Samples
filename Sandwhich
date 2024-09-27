@@ -1,0 +1,29 @@
+// Write your code here
+
+public class Sandwich {
+    private String mainIngredient;
+    private String bread;
+    private double price;
+
+    public String getMainIngredient(){
+        return mainIngredient;
+    }
+    public String getBread(){
+        return bread;
+    }
+    public Double getPrice(){
+        return price;
+    }
+    public void setMainIngredient(String mainIngredient) {
+        this.mainIngredient = mainIngredient;
+    }
+    
+    public void setBread(String bread) {
+        this.bread = bread;
+    }
+    
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    
+}
