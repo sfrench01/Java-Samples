@@ -1,0 +1,55 @@
+// Write your code here
+import java.util.Scanner;
+import java.time.LocalDate;
+//import java.time.format.DateTimeFormatter;
+
+public class TestWedding {
+    public static void main(String[] args){
+
+        Scanner inputDevice = new Scanner(System.in);
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-dd-MM");
+        System.out.print("Enter month of wedding ");
+        int month = inputDevice.nextInt();
+        System.out.print("Enter day of wedding ");
+        int day = inputDevice.nextInt();
+        System.out.print("Enter year of wedding ");
+        int year = inputDevice.nextInt();
+
+        LocalDate date = LocalDate.of(year, month, day);
+
+        System.out.print("Enter first name of bride >> ");
+        String firstBride = inputDevice.next();
+        System.out.print("Enter last name of bride >> ");
+        String lastBride = inputDevice.next();
+        Person bride = new Person(firstBride, lastBride);
+        System.out.print("Enter first name of groom >> ");
+        String firstGroom = inputDevice.next();
+        System.out.print("Enter last name of groom >> ");
+        String lastGroom = inputDevice.next();
+        Person groom = new Person(firstGroom, lastGroom);
+        System.out.print("Enter location of wedding >> ");
+        String location = inputDevice.nextLine();
+        Couple couple = new Couple(bride, groom);
+        Wedding wedding = new Wedding(couple, date, location);
+        weddingDetails(wedding);
+
+    }
+    public static void weddingDetails(Wedding w){
+        Couple couple = w.getCouple();
+        LocalDate weddingDate = w.getWeddingDate();
+        String location = w.getLocation();
+        Person bride = couple.getBride();
+        Person groom = couple.getGroom();
+        String firstBride = bride.getfirstName();
+        String lastBride = bride.getlastName();
+        String firstGroom = groom.getfirstName();
+        String lastGroom = groom.getlastName();
+
+        System.out.println("\n\n" + lastBride + "/" + lastGroom + " Wedding");
+        System.out.println("Date " + weddingDate + "    Location: " + location);
+        System.out.println("Bride: " + firstBride + " " + lastBride);
+        System.out.println("Groom: " + firstGroom + " " + lastGroom);
+
+    }
+    
+}
