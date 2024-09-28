@@ -93,3 +93,27 @@ public class Couple {
     }
     
 }
+=======================
+// Write your code here
+import java.time.LocalDate;
+public class Wedding {
+    Couple couple;
+    LocalDate weddingDate;
+    String location;
+
+    public Wedding(Couple c, LocalDate date, String local){
+        couple = c;
+        weddingDate = date;
+        location = local;
+    }
+    public Couple getCouple(){
+        return couple;
+    }
+    public LocalDate getWeddingDate(){
+        return weddingDate;
+    }
+    public String getLocation(){
+        return location;
+    }
+
+}
