@@ -53,3 +53,23 @@ public class TestWedding {
     }
     
 }
+
+===================
+// Write your code here
+public class Person{
+    String firstName;
+    String lastName;
+
+    public Person(String first, String last){
+        firstName = first;
+        lastName = last;
+    }
+
+    public String getfirstName() {
+        return firstName;
+    }  
+    public String getlastName(){
+        return lastName;
+    } 
+    
+}
