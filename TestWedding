@@ -73,3 +73,23 @@ public class Person{
     } 
     
 }
+====================
+
+// Write your code here
+public class Couple {
+    Person bride;
+    Person groom;
+
+    public Couple(Person br, Person gr){
+        bride = br;
+        groom = gr;
+    }
+
+    public Person getBride(){
+        return bride;
+    }
+    public Person getGroom(){
+        return groom;
+    }
+    
+}
