@@ -1,0 +1,44 @@
+// Write your code here
+import java.util.Scanner;
+
+public class TestAutomobiles {
+    
+    public static void main(String[] args) {
+        Automobile car1 = enterData();
+        Automobile car2 = enterData();
+        
+        System.out.println("\nDetails of Automobile 1:");
+        System.out.println(car1);
+        
+        System.out.println("\nDetails of Automobile 2:");
+        System.out.println(car2);
+    }
+    
+    public static Automobile enterData() {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter Automobile details:");
+        
+        System.out.print("ID (0-9999): ");
+        int id = scanner.nextInt();
+        
+        scanner.nextLine();
+        
+        System.out.print("Make: ");
+        String make = scanner.nextLine();
+        
+        System.out.print("Model: ");
+        String model = scanner.nextLine();
+        
+        System.out.print("Color: ");
+        String color = scanner.nextLine();
+        
+        System.out.print("Year (2005-2024): ");
+        int year = scanner.nextInt();
+        
+        System.out.print("Miles per Gallon (10-60): ");
+        int mpg = scanner.nextInt();
+        
+        return new Automobile(id, make, model, color, year, mpg);
+    }
+}
