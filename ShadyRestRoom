@@ -1,0 +1,30 @@
+// Write your code here
+import java.util.Scanner;
+public class ShadyRestRoom {
+
+    public static void main(String[] args) {
+        int queen = 1;
+        int king = 2;
+        int suite = 3;
+        int userChoice;
+
+        System.out.println("""
+                (1) Queen bed
+                (2) King bed
+                (3) Suite with a King bed and a pull-out couch
+                """);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Selection (1, 2, or 3) >> ");
+        userChoice = input.nextInt();
+
+        if(userChoice == queen){
+            System.out.println("You selected Queen bed $125");
+        }else if (userChoice == king) {
+            System.out.println("You selected King bed $139");
+        }else if (userChoice == suite) {
+            System.out.println("You selected Suite with a king bed and pull-out couch $165");
+        }else{
+            System.out.println("Invalid selecetion $0");
+        }
+    }
+}
