@@ -1,0 +1,80 @@
+// Write your code here
+// Write your code here
+import java.util.Scanner;
+public class ShadyRestRoom2 {
+
+    public static void main(String[] args) {
+        int queen = 1;
+        int king = 2;
+        int suite = 3;
+        int priceQueen = 125;
+        int priceKing = 139;
+        int priceSuite = 165;
+        int lakeAddOn = 15;
+        int userChoice;
+        int userView;
+        int newPrice;
+        int lakeView = 1;
+        int parkView = 2;
+
+        System.out.println("""
+                (1) Queen bed
+                (2) King bed
+                (3) Suite with a King bed and a pull-out couch
+                """);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Selection (1, 2, or 3) >> ");
+        userChoice = input.nextInt();
+
+        if((userChoice == queen) || (userChoice == king) || (userChoice == suite)){
+            System.out.println("""
+                    Please choose a view:
+                    (1) a lake
+                    (2) a park
+                    """);
+            System.out.print("Enter Selection (1 or 2) >> ");
+            userView = input.nextInt();
+        
+
+            if((userChoice == queen) && (userView == parkView)){
+                System.out.println("You selected Queen bed $" + priceQueen);
+            }else if ((userChoice == queen) && (userView == lakeView)) {
+                newPrice = priceQueen + lakeAddOn;
+                System.out.println("You selected Queen bed with a lake view for $" + newPrice);
+            }else if ((userChoice == queen) && (userView != parkView) && (userView != lakeView)) {
+                newPrice = priceQueen + lakeAddOn;
+                System.out.println("You selected Queen bed with a lake view for $" + newPrice);
+            }
+            else if ((userChoice == king) && (userView == parkView)) {
+                System.out.println("You selected King bed $" + priceKing);
+            }
+            else if ((userChoice == king) && (userView == lakeView)) {
+                newPrice = priceKing + lakeAddOn;
+                System.out.println("You selected King bed with a lake view for $" + newPrice);
+
+            }else if ((userChoice == king) && (userView != parkView) && (userView != lakeView)) {
+                newPrice = priceKing + lakeAddOn;
+                System.out.println("You selected King bed with a lake view for $" + newPrice);
+            }
+            else if ((userChoice == suite) && (userView == parkView)) {
+                System.out.println("You selected Suite with a King bed and pull-out couch $" + priceSuite);
+            }
+            else if ((userChoice == suite) && (userView == lakeView)) {
+                newPrice = priceSuite + lakeAddOn;
+                System.out.println("You selected Suite with King bed and a pull-out couch with a lake view for $" + newPrice);
+
+            }else if ((userChoice == suite) && (userView != parkView) && (userView != lakeView)) {
+                newPrice = priceSuite + lakeAddOn;
+                System.out.println("You selected Suite with King bed and pull-out couch with a lake view for $" + newPrice);
+            }
+            else{
+                System.out.println("Invalid selecetion $0");
+            }
+
+        }
+        else{
+            System.out.println("Invalid selecetion");
+
+        }
+    }
+}
