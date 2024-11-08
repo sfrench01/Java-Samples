@@ -58,3 +58,43 @@ public class RaceHorse extends Horse {
         System.out.println(name + " has been in " + races + " races.");
     }
 }
+
+
+// Write your code here
+import java.util.Scanner;
+public class DemoHorses {
+    public static void main(String[] args) {
+        
+    Scanner inputDevice = new Scanner(System.in);
+    String horseName;
+    String horseColor;
+    int horseBirthYear;
+    String raceHorseName;
+    String raceHorseColor;
+    int raceHorseBirthYear;
+    int numHorseRaces;
+
+    System.out.print("Enter name for a horse >> ");
+    horseName = inputDevice.nextLine();
+    System.out.print("Enter color for " + horseName + " >> ");
+    horseColor = inputDevice.nextLine();
+    System.out.print("Enter year of birth >> ");
+    horseBirthYear = inputDevice.nextInt();
+    inputDevice.nextLine();
+    System.out.print("Enter name for race horse >> ");
+    raceHorseName = inputDevice.nextLine();
+    System.out.print("Enter color for " + raceHorseName + " >> ");
+    raceHorseColor = inputDevice.nextLine();
+    System.out.print("Enter year of birth >> ");
+    raceHorseBirthYear = inputDevice.nextInt();
+    inputDevice.nextLine();
+    System.out.print("Enter number of races for " + raceHorseName + " >> ");
+    numHorseRaces = inputDevice.nextInt();
+
+    Horse horse = new Horse(horseName, horseColor, horseBirthYear);
+    horse.display();
+    RaceHorse raceHorse = new RaceHorse(raceHorseName, raceHorseColor, raceHorseBirthYear, numHorseRaces);
+        raceHorse.display();
+    }
+    
+}
