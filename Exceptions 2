@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class SqrtException {
+    public static void main(String[] args) {
+        // Create a Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user for an integer input
+        System.out.print("Enter an integer >> ");
+        String input = scanner.nextLine(); // Read input as a string
+        
+        int number = 0; // Default value for the number
+        
+        try {
+            // Try to parse the input string to an integer
+            number = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            // Catch any NumberFormatException and display an error message
+            System.out.println("Invalid input. Setting number to 0.");
+        }
+        
+        try {
+            // If the number is negative, throw an ArithmeticException
+            if (number < 0) {
+                throw new ArithmeticException("Can't take square root of a negative number");
+            }
+            
+            // If the number is valid (>= 0), calculate the square root
+            double squareRoot = Math.sqrt(number);
+            System.out.println("Square root of " + number + " is " + squareRoot);
+        } catch (ArithmeticException e) {
+            // Catch and display the ArithmeticException if the number is negative
+            System.out.println(e.getMessage());
+        }
+        
+        // Close the scanner to avoid resource leaks
+        scanner.close();
+    }
+}
