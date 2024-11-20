@@ -1,0 +1,34 @@
+// Write your code here
+import java.util.Scanner;
+
+public class BadSubscriptCaught {
+    public static void main(String[] args) {
+        // Declare an array of 8 first names
+        String[] names = {"John", "Jane", "Bob", "Alice", "Fred", "Emma", "Steve", "Lucy"};
+        
+        // Create a Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Loop to repeatedly ask for user input
+        while (true) {
+            try {
+                // Prompt the user for a number
+                System.out.print("Enter a number, and I will display a name >> ");
+                int index = scanner.nextInt(); // Read the user's input
+                
+                // Try to display the name at the requested index
+                System.out.println("Name is " + names[index]);
+                
+                // Exit the loop after a valid name is displayed
+                break;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                // Handle the case when the index is out of bounds
+                System.out.println("Subscript out of range.");
+                // Optionally, you can ask the user to try again, or break the loop if desired.
+            }
+        }
+        
+        // Close the scanner to avoid resource leaks
+        scanner.close();
+    }
+}
